@@ -38,7 +38,7 @@ const regions={
 '菲律賓':[['克拉克','CRK'],['馬尼拉','MNL']]};
 const $=id=>document.getElementById(id);
 for(const id of ['origin1','destination1','origin2','destination2']){
- const sel=$(id);for(const [region,airports] of Object.entries(regions)){const group=document.createElement('optgroup');group.label=region;for(const [name,code] of airports){const opt=document.createElement('option');opt.value=code;opt.textContent=`${name} (${code})`;group.append(opt)}sel.append(group)}
+ const sel=$(id);for(const [region,airports] of Object.entries(regions)){const group=document.createElement('optgroup');group.label=region;for(const [name,code] of airports){const opt=document.createElement('option');opt.value=code;opt.textContent=`${code} — ${name}`;group.append(opt)}sel.append(group)}
 }
 $('origin1').value='HKG';$('destination1').value='TPE';$('origin2').value='TPE';$('destination2').value='HKG';
 const mode=()=>document.querySelector('input[name="trip"]:checked').value;
